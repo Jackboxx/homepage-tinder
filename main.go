@@ -1,8 +1,12 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"log"
+	"math"
+	"math/rand"
+	"os"
 	"os/exec"
 	"runtime"
 	"strings"
@@ -207,13 +211,44 @@ func trimRemainingLeft(str string, cutoff string) string {
 	return result
 }
 
+func shuffleSlice(slice []string) {
+	for i := range slice {
+		j := rand.Intn(i + 1)
+		slice[i], slice[j] = slice[j], slice[i]
+	}
+}
+
 func main() {
-	queries := [3]string{"test", "hello world", "stackoverflow"}
+	var queries []string
+	var filename string
+
+	fmt.Print("Enter file location: ")
+	fmt.Scan(&filename)
+
+	file, fErr := os.Open(filename)
+
+	if fErr != nil {
+		log.Fatal("Failed to open file")
+	}
+
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		queries = append(queries, scanner.Text())
+	}
+
+	if err := scanner.Err(); err != nil {
+		log.Fatal("Failed to read file")
+	}
+
+	shuffleSlice(queries)
 
 	var url string = ""
 	var err error
 
 	for _, s := range queries {
+		timeout := 1.0
+		fmt.Println("Loading...")
+
 		for {
 			channel := make(chan string)
 
@@ -233,7 +268,8 @@ func main() {
 				break
 			}
 
-			time.Sleep(5 * time.Second)
+			time.Sleep(time.Duration(timeout) * time.Second)
+			timeout = math.Min(timeout*1.5, 10)
 		}
 
 		var answer string
@@ -245,4 +281,5 @@ func main() {
 		}
 	}
 
+	defer file.Close()
 }
