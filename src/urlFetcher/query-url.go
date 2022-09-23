@@ -190,7 +190,6 @@ func trimRemainingLeft(str string, cutoff string) string {
 }
 
 func QueryUrl(name string) string {
-	fmt.Println("???")
 	var url string
 	var err error
 

@@ -83,12 +83,10 @@ func readJson() {
 				out = urlFetcher.QueryUrl(element)
 				if out != "" {
 					payload[element] = out
-					fmt.Println(element + " : " + out)
 					writeData(payload)
 				}
 			} else {
 				payload[element] = out
-				fmt.Println(element + " : " + out)
 				writeData(payload)
 			}
 		}
