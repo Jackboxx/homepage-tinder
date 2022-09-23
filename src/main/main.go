@@ -1,99 +1,46 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
 	"log"
-	"os/exec"
-	"runtime"
+	"math/rand"
+	"net/http"
+	"reflect"
 
-	"homepage-tinder/src/urlFetcher"
+	"homepage-tinder/src/resources"
 
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
 )
 
-type hello struct {
+type website struct {
 	app.Compo
+	Name     string
+	ImageSrc string
 }
 
-func (h *hello) Render() app.UI {
-	return app.H1().Text("Hello World!")
+func (ws *website) Render() app.UI {
+	element := readRandomElement()
+	return app.Div().Text("some text: " + element.Url)
 }
 
-func open(url string) error {
-	var cmd string
-	var args []string
+func readRandomElement() resources.Data {
+	keys := reflect.ValueOf(resources.WebsiteData).MapKeys()
+	randIndex := rand.Int31n(int32(len(keys)))
+	randKey := keys[randIndex].String()
+	randElement := resources.WebsiteData[randKey]
 
-	switch runtime.GOOS {
-	case "windows":
-		cmd = "cmd"
-		args = []string{"/c", "start"}
-	case "darwin":
-		cmd = "open"
-	default: // "linux", "freebsd", "openbsd", "netbsd"
-		cmd = "xdg-open"
-	}
-	args = append(args, fmt.Sprintf("https://%s", url))
-	return exec.Command(cmd, args...).Start()
-}
-
-// app.Route("/", &hello{})
-// app.RunWhenOnBrowser()
-
-// http.Handle("/", &app.Handler{
-// 	Name:        "Hello",
-// 	Description: "An Hello World! example",
-// })
-// if err := http.ListenAndServe(":8000", nil); err != nil {
-// 	log.Fatal(err)
-// }
-
-func writeData(jsonData map[string]interface{}) {
-	data, err := json.Marshal(jsonData)
-
-	if err != nil {
-		log.Print("Error during json Marshal: ", err)
-	}
-
-	err = ioutil.WriteFile("src/resources/data.json", data, 0644)
-
-	if err != nil {
-		log.Print("Error during file write: ", err)
-	}
-}
-
-func readJson() {
-	content, err := ioutil.ReadFile("src/resources/data.json")
-	if err != nil {
-		log.Fatal("Error when opening file: ", err)
-	}
-
-	var payload map[string]interface{}
-	err = json.Unmarshal(content, &payload)
-	if err != nil {
-		log.Fatal("Error during json Unmarshal(): ", err)
-	}
-
-	for element := range payload {
-		if payload[element] == nil {
-			out, err := urlFetcher.BuildUrl(element)
-
-			if err != nil {
-				out = urlFetcher.QueryUrl(element)
-				if out != "" {
-					payload[element] = out
-					writeData(payload)
-				}
-			} else {
-				payload[element] = out
-				writeData(payload)
-			}
-		}
-	}
-
+	return randElement
 }
 
 func main() {
-	readJson()
+	app.Route("/", &website{})
+	app.RunWhenOnBrowser()
+
+	http.Handle("/", &app.Handler{
+		Name:        "homepage tinder",
+		Description: "Tinder swiping through a list of websites homepage's",
+	})
+
+	if err := http.ListenAndServe(":8080", nil); err != nil {
+		log.Fatal(err)
+	}
 }
