@@ -1,14 +1,9 @@
-package main
+package urlFetcher
 
 import (
-	"bufio"
 	"fmt"
 	"log"
-	"math"
-	"math/rand"
-	"os"
 	"os/exec"
-	"runtime"
 	"strings"
 	"time"
 )
@@ -137,23 +132,6 @@ func replaceSpaces(str string) string {
 	return strings.ReplaceAll(str, " ", "+")
 }
 
-func open(url string) error {
-	var cmd string
-	var args []string
-
-	switch runtime.GOOS {
-	case "windows":
-		cmd = "cmd"
-		args = []string{"/c", "start"}
-	case "darwin":
-		cmd = "open"
-	default: // "linux", "freebsd", "openbsd", "netbsd"
-		cmd = "xdg-open"
-	}
-	args = append(args, url)
-	return exec.Command(cmd, args...).Start()
-}
-
 func intMin(a int, b int) int {
 	if a < b {
 		return a
@@ -211,77 +189,33 @@ func trimRemainingLeft(str string, cutoff string) string {
 	return result
 }
 
-func shuffleSlice(slice []string) {
-	for i := range slice {
-		j := rand.Intn(i + 1)
-		slice[i], slice[j] = slice[j], slice[i]
-	}
-}
-
-func returnUrl() {
-	var queries []string
-	var filename string
-
-	fmt.Print("Enter file location: ")
-	fmt.Scan(&filename)
-
-	rfile, frErr := os.Open(filename)
-
-	if frErr != nil {
-		log.Fatal("Failed to open file")
-	}
-
-	wfile, fwErr := os.Create("urls")
-
-	if fwErr != nil {
-		log.Fatal("Failed to create file")
-	}
-
-	scanner := bufio.NewScanner(rfile)
-	for scanner.Scan() {
-		queries = append(queries, scanner.Text())
-	}
-
-	if err := scanner.Err(); err != nil {
-		log.Fatal("Failed to read file")
-	}
-
-	shuffleSlice(queries)
-
-	var url string = ""
+func QueryUrl(name string) string {
+	fmt.Println("???")
+	var url string
 	var err error
 
-	for _, s := range queries {
-		timeout := 1.0
+	for {
+		channel := make(chan string)
 
-		for {
-			channel := make(chan string)
+		go func() {
+			url, err = getUrl(name)
 
-			go func() {
-				url, err = getUrl(s)
-
-				if err != nil {
-					log.Fatal("Failed to get Url")
-				}
-
+			if err != nil {
+				log.Print(err)
+			} else {
 				channel <- url
-			}()
-
-			result_url := <-channel
-
-			if len(result_url) > 0 {
-				break
 			}
+		}()
 
-			time.Sleep(time.Duration(timeout) * time.Second)
-			timeout = math.Min(timeout*1.5, 10)
+		result_url := <-channel
+
+		if len(result_url) > 0 {
+			break
 		}
 
-		fmt.Printf("wrote URL: %s to URL file\n", url)
-		wfile.Write([]byte(fmt.Sprintf("%s\n", url)))
+		time.Sleep(20 * time.Second)
+		return ""
 	}
 
-	defer rfile.Close()
-	defer wfile.Close()
-	fmt.Println("Finished")
+	return trimRemainingLeft(trimRemainingLeft(url, "//"), "www.")
 }
