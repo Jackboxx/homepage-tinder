@@ -1,1 +1,452 @@
-{"ACP IT Solutions GmbH":{"Description":{"Url":"","Opened":false}},"AHT Cooling Systems":{"Description":{"Url":"","Opened":false}},"ALTEN Austria Süd GmbH":{"Description":{"Url":"","Opened":false}},"ANDRITZ AG":{"Description":{"Url":"","Opened":false}},"APUS Software GmbH":{"Description":{"Url":"","Opened":false}},"ASCO Engineering GmbH":{"Description":{"Url":"www.asco-engineering.at","Opened":false}},"AUTFORCE Automations GmbH":{"Description":{"Url":"","Opened":false}},"AVL List GmbH":{"Description":{"Url":"www.avl.at","Opened":false}},"Advanced commerce labs GmbH":{"Description":{"Url":"","Opened":false}},"Alicona Imaging GmbH":{"Description":{"Url":"","Opened":false}},"Anton Paar GmbH":{"Description":{"Url":"","Opened":false}},"AutomationX GmbH":{"Description":{"Url":"","Opened":false}},"B4B Solutions GmbH / All for One Group":{"Description":{"Url":"","Opened":false}},"BDI-BioEnergy International GmbH":{"Description":{"Url":"","Opened":false}},"BEKO Engineering \u0026 Informatik GmbH":{"Description":{"Url":"www.beko.at","Opened":false}},"BT-Anlagenbau GmbH \u0026 Co.KG":{"Description":{"Url":"www.bt-anlagenbau.at","Opened":false}},"BYTEPOETS GmbH":{"Description":{"Url":"","Opened":false}},"BearingPoint GmbH":{"Description":{"Url":"","Opened":false}},"Beyond Now":{"Description":{"Url":"","Opened":false}},"Boom Software AG":{"Description":{"Url":"","Opened":false}},"CoPlanner Softwar \u0026 Consulting GmbH":{"Description":{"Url":"","Opened":false}},"Comm-Unity EDV GmbH":{"Description":{"Url":"","Opened":false}},"DCCS GmbH":{"Description":{"Url":"www.dccs.com","Opened":false}},"DRGT Systems GmbH":{"Description":{"Url":"","Opened":false}},"Dedalus Healthcare GesmbH":{"Description":{"Url":"","Opened":false}},"Dialog Semiconductor GmbH a Renesas Company":{"Description":{"Url":"","Opened":false}},"DiniTech GmbH":{"Description":{"Url":"","Opened":false}},"Dynatrace":{"Description":{"Url":"","Opened":false}},"EFKON GmbH":{"Description":{"Url":"efkon.com/","Opened":false}},"EVG Entwicklungs- und Verwertungs Ges.m.b.H":{"Description":{"Url":"www.evg.at","Opened":false}},"Edler HR Management GmbH":{"Description":{"Url":"","Opened":false}},"FERCHAU Austria GmbH":{"Description":{"Url":"","Opened":false}},"FH CAMPUS 02":{"Description":{"Url":"","Opened":false}}}
+{
+    "ACP IT Solutions GmbH": {
+        "Description": {
+            "Url": "www.acp.at"
+        }
+    },
+    "AHT Cooling Systems": {
+        "Description": {
+            "Url": "www.aht.at"
+        }
+    },
+    "ALTEN Austria Sued GmbH": {
+        "Description": {
+            "Url": "www.alten.at"
+        }
+    },
+    "ANDRITZ AG": {
+        "Description": {
+            "Url": "www.andritz.com"
+        }
+    },
+    "APUS Software GmbH": {
+        "Description": {
+            "Url": "www.apus.at"
+        }
+    },
+    "ASCO Engineering GmbH": {
+        "Description": {
+            "Url": "www.asco-engineering.at"
+        }
+    },
+    "AUTFORCE Automations GmbH": {
+        "Description": {
+            "Url": "www.autforce.com"
+        }
+    },
+    "AVL List GmbH": {
+        "Description": {
+            "Url": "www.avl.com"
+        }
+    },
+    "Advanced commerce labs GmbH": {
+        "Description": {
+            "Url": "www.advanced.com"
+        }
+    },
+    "Alicona Imaging GmbH": {
+        "Description": {
+            "Url": "www.alicona.at"
+        }
+    },
+    "Anton Paar GmbH": {
+        "Description": {
+            "Url": "www.anton-paar.com"
+        }
+    },
+    "AutomationX GmbH": {
+        "Description": {
+            "Url": "www.automationx.at"
+        }
+    },
+    "B4B Solutions GmbH / All for One Group": {
+        "Description": {
+            "Url": "www.b4b.com"
+        }
+    },
+    "BDI-BioEnergy International GmbH": {
+        "Description": {
+            "Url": "www.bdi-bioenergy.com"
+        }
+    },
+    "BEKO Engineering & Informatik GmbH": {
+        "Description": {
+            "Url": "www.beko.at"
+        }
+    },
+    "BT-Anlagenbau GmbH & Co.KG": {
+        "Description": {
+            "Url": "www.bt-anlagenbau.at"
+        }
+    },
+    "BYTEPOETS GmbH": {
+        "Description": {
+            "Url": "www.bytepoets.com"
+        }
+    },
+    "BearingPoint GmbH": {
+        "Description": {
+            "Url": "www.bearingpoint.com"
+        }
+    },
+    "Beyond Now": {
+        "Description": {
+            "Url": "www.beyondnow.com"
+        }
+    },
+    "Boom Software AG": {
+        "Description": {
+            "Url": "www.boomsoftware.com"
+        }
+    },
+    "CoPlanner Softwar & Consulting GmbH": {
+        "Description": {
+            "Url": "www.coplanner.com"
+        }
+    },
+    "Comm-Unity EDV GmbH": {
+        "Description": {
+            "Url": "www.comm-unity.at"
+        }
+    },
+    "DCCS GmbH": {
+        "Description": {
+            "Url": "www.dccs.com"
+        }
+    },
+    "DRGT Systems GmbH": {
+        "Description": {
+            "Url": "www.drgt.at"
+        }
+    },
+    "Dedalus Healthcare GesmbH": {
+        "Description": {
+            "Url": "www.dedalus.com"
+        }
+    },
+    "Dialog Semiconductor GmbH a Renesas Company": {
+        "Description": {
+            "Url": "www.dialog.com"
+        }
+    },
+    "DiniTech GmbH": {
+        "Description": {
+            "Url": "www.dinitech.at"
+        }
+    },
+    "Dynatrace": {
+        "Description": {
+            "Url": "www.dynatrace.com"
+        }
+    },
+    "EFKON GmbH": {
+        "Description": {
+            "Url": "www.efkon.com"
+        }
+    },
+    "EVG Entwicklungs- und Verwertungs Ges.m.b.H": {
+        "Description": {
+            "Url": "www.evg.com"
+        }
+    },
+    "Edler HR Management GmbH": {
+        "Description": {
+            "Url": "www.edler-hr.at"
+        }
+    },
+    "FERCHAU Austria GmbH": {
+        "Description": {
+            "Url": "www.ferchau.com"
+        }
+    },
+    "FH CAMPUS 02": {
+        "Description": {
+            "Url": "www.campus02.at"
+        }
+    },
+    "FH JOANNEUM": {
+        "Description": {
+            "Url": "www.fh-joanneum.at"
+        }
+    },
+    "Hiebler & Partner Personal- und Projektmanagement GmbH": {
+        "Description": {
+            "Url": "hiebler-partner.at"
+        }
+    },
+    "Home of Talents Joham & Partner": {
+        "Description": {
+            "Url": "www.homeoftalents.at"
+        }
+    },
+    "ITG Informationstechnik Graz GmbH": {
+        "Description": {
+            "Url": "www.virtu.com"
+        }
+    },
+    "Insort GmbH": {
+        "Description": {
+            "Url": "www.insort.at"
+        }
+    },
+    "Intact GmbH": {
+        "Description": {
+            "Url": "www.intact.at"
+        }
+    },
+    "Interad Software GmbH": {
+        "Description": {
+            "Url": "www.interad.com"
+        }
+    },
+    "JOANNEUM RESEARCH": {
+        "Description": {
+            "Url": "www.joanneum.at"
+        }
+    },
+    "Jungheinrich Systemloesungen GmbH": {
+        "Description": {
+            "Url": "jungheinrich.at"
+        }
+    },
+    "KNAPP AG": {
+        "Description": {
+            "Url": "www.knapp.at"
+        }
+    },
+    "KOMAB Holding GmbH": {
+        "Description": {
+            "Url": "www.komab.com"
+        }
+    },
+    "KPS Automation GmbH": {
+        "Description": {
+            "Url": "www.kps.at"
+        }
+    },
+    "Koerner Chemieanlagenbau Ges.m.b.H.": {
+        "Description": {
+            "Url": "www.koerner.at"
+        }
+    },
+    "Komptech GmbH": {
+        "Description": {
+            "Url": "www.komptech.com"
+        }
+    },
+    "Kuenz GmbH": {
+        "Description": {
+            "Url": "www.kuenz.at"
+        }
+    },
+    "LOGICDATA Electronic & Software Entwicklungs GmbH": {
+        "Description": {
+            "Url": "www.logicdata.at"
+        }
+    },
+    "MAGNA": {
+        "Description": {
+            "Url": "www.magna.com"
+        }
+    },
+    "MSG Mechatronic Systems GmbH": {
+        "Description": {
+            "Url": "www.msg.at"
+        }
+    },
+    "Mides Healthcare Technology GmbH": {
+        "Description": {
+            "Url": "mides.com"
+        }
+    },
+    "Montanuniversit Leoben": {
+        "Description": {
+            "Url": "www.unileoben.ac.at"
+        }
+    },
+    "NAVAX Consulting GmbH": {
+        "Description": {
+            "Url": "www.navax.com"
+        }
+    },
+    "NTS Netzwerk Telekom Service AG": {
+        "Description": {
+            "Url": "www.nts.com"
+        }
+    },
+    "Omninet Austria GmbH": {
+        "Description": {
+            "Url": "www.omnitracker.com"
+        }
+    },
+    "PIA Automation Austria GmbH": {
+        "Description": {
+            "Url": "www.pia.com"
+        }
+    },
+    "REWE digital Austria GmbH": {
+        "Description": {
+            "Url": "www.rewe-digital.com"
+        }
+    },
+    "RINGANA GmbH": {
+        "Description": {
+            "Url": "www.ringana.com"
+        }
+    },
+    "Rosendahl Nextrom GmbH": {
+        "Description": {
+            "Url": "www.rosendahl.com"
+        }
+    },
+    "SES-imagotag GmbH": {
+        "Description": {
+            "Url": "www.ses-imagotag.com"
+        }
+    },
+    "SLOC": {
+        "Description": {
+            "Url": "www.sloc.one"
+        }
+    },
+    "SSI SCHAEFER OESTERREICH": {
+        "Description": {
+            "Url": "www.ssi.at"
+        }
+    },
+    "STADLMANN TEC GmbH": {
+        "Description": {
+            "Url": "www.stadlmann.at"
+        }
+    },
+    "SVI Austria GmbH": {
+        "Description": {
+            "Url": "www.svi.com"
+        }
+    },
+    "Sappi Austria Produktions GmbH & Co. KG": {
+        "Description": {
+            "Url": "www.sappi.com"
+        }
+    },
+    "Saubermacher Dienstleistungs AG": {
+        "Description": {
+            "Url": "www.saubermacher.at"
+        }
+    },
+    "Siemens Personaldienstleistungen GmbH": {
+        "Description": {
+            "Url": "www.siemens.com"
+        }
+    },
+    "Studien- und Technologie Transfer Zentrum Weiz GmbH": {
+        "Description": {
+            "Url": "www.innovationszentrum-weiz.at"
+        }
+    },
+    "TG Mess-, Steuer- und Regeltechnik GmbH": {
+        "Description": {
+            "Url": "www.tg.at"
+        }
+    },
+    "TROX SOMMER GmbH": {
+        "Description": {
+            "Url": "www.trox.de"
+        }
+    },
+    "Trenkwalder Personaldienste GmbH": {
+        "Description": {
+            "Url": "de.trenkwalder.com"
+        }
+    },
+    "VTU Engineering GmbH": {
+        "Description": {
+            "Url": "www.vtu.com"
+        }
+    },
+    "Vexcel Imaging GmbH": {
+        "Description": {
+            "Url": "www.vexcel.com"
+        }
+    },
+    "Wienerberger oesterreich GmbH": {
+        "Description": {
+            "Url": "wienerberger.at"
+        }
+    },
+    "XAL GmbH": {
+        "Description": {
+            "Url": "www.xal.com"
+        }
+    },
+    "XiTrust Secure Technologies GmbH": {
+        "Description": {
+            "Url": "www.xitrust.com"
+        }
+    },
+    "ZETA GmbH": {
+        "Description": {
+            "Url": "www.zeta.com"
+        }
+    },
+    "ZF Lemfoerder Achssysteme GmbH": {
+        "Description": {
+            "Url": "www.zf.com"
+        }
+    },
+    "ams-OSRAM AG": {
+        "Description": {
+            "Url": "www.ams-osram.com" 
+        }
+    },
+    "axtesys GmbH": {
+        "Description": {
+            "Url": "www.axtesys.at"
+        }
+    },
+    "e1 Business Solutions GmbH": {
+        "Description": {
+            "Url": "www.e1-solutions.com"
+        }
+    },
+    "eXperts consulting center": {
+        "Description": {
+            "Url": "www.ecc-experts.at"
+        }
+    },
+    "eee group GmbH": {
+        "Description": {
+            "Url": "www.eee.at"
+        }
+    },
+    "epunkt GmbH": {
+        "Description": {
+            "Url": "www.epunkt.com"
+        }
+    },
+    "evon gmbh": {
+        "Description": {
+            "Url": "www.evon.at"
+        }
+    },
+    "niceshops GmbH": {
+        "Description": {
+            "Url": "www.niceshops.at"
+        }
+    },
+    "pidas oesterreich GmbH": {
+        "Description": {
+            "Url": "www.pidas.com"
+        }
+    },
+    "smartpoint IT Consulting": {
+        "Description": {
+            "Url": "www.smartpoint.at"
+        }
+    },
+    "wirecube GmbH": {
+        "Description": {
+            "Url": "www.wirecube.at"
+        }
+    }
+}

@@ -4,10 +4,23 @@ import (
 	"errors"
 	"fmt"
 	"strings"
+	"time"
+
+	"github.com/go-ping/ping"
 )
 
 func pingDomain(domain string) bool {
-	return false
+	pinger, err := ping.NewPinger(domain)
+
+	if err != nil {
+		return false
+	}
+
+	pinger.Count = 1
+	pinger.Timeout = time.Second
+	pinger.Run()
+
+	return pinger.PacketsRecv > 0
 }
 
 func build(name string, prefix string, suffix string) (string, error) {

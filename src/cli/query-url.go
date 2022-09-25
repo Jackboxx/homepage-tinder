@@ -21,7 +21,7 @@ func getUrl(query string) (string, error) {
 	element := trimRemainingLeft(string(data), "result__a")
 	first_result := trimRemainingRight(element, "</a>")
 	url_escaped := parseEscapedUrl(first_result)
-	url := url.PathEscape(url_escaped)
+	url, _ := url.PathUnescape(url_escaped)
 
 	return url, nil
 }
@@ -118,8 +118,7 @@ func QueryUrl(name string) string {
 			break
 		}
 
-		time.Sleep(20 * time.Second)
-		return ""
+		time.Sleep(5 * time.Second)
 	}
 
 	return trimRemainingLeft(trimRemainingLeft(url, "//"), "www.")
