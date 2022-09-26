@@ -26,18 +26,20 @@ func (wp *WebsitePanel) Render() app.UI {
 
 	return app.Div().Body(
 		app.Div().Body(
-			app.Span().Text(wp.Name),
+			app.Img().Src(fmt.Sprint("web/images/", wp.Url, ".png")).Class("screenshot"),
 		),
 		app.Div().Body(
-			app.Img().Src(fmt.Sprint("web/images/", wp.Url, ".png")),
-		),
-		app.Div().Body(
-			app.Span().Text("Next"),
-		).OnClick(wp.getNew),
-		app.Div().Body(
-			app.Span().Text("Open in new tab"),
-		).OnClick(wp.onClick),
-	)
+			app.Div().Body(
+				app.Div().Body(
+					app.Span().Text(wp.Name),
+				).Class("company-name"),
+				app.Div().Body(
+					app.Div().Text("Next").OnClick(wp.getNew).Class("next"),
+					app.Div().Text("Open in new tab").OnClick(wp.onClick).Class("new-tab"),
+				).Class("button-container"),
+			).Class("item-container"),
+		).Class("flex-container"),
+	).Class("panel")
 }
 
 func (wp *WebsitePanel) getNew(ctx app.Context, e app.Event) {
