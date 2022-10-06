@@ -3,4 +3,5 @@ build:
 	go build -o homepage-tinder ./src/main
 
 run: build
+	echo "http://localhost:5050"
 	./homepage-tinder
